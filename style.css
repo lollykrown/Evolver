@@ -4,6 +4,7 @@
     --red: #EC1D24;
     --black:#000000;
     --white:#FFFFFF;
+    --gray: #828282;
   }
  
 body{
@@ -18,6 +19,14 @@ ul{
 p{
     font-size: 1.25rem;
 }
+header{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display:flex;
+    flex-direction: column;
+}
 .nav-group{
     display: -webkit-box;
     display: -moz-box;
@@ -26,6 +35,14 @@ p{
     display:flex;
     flex: row wrap;
     justify-content: space-between;
+}
+.nav-container{
+    -webkit-order: 1;
+    order: 1;
+}
+.search{
+    -webkit-order: 2;
+    order: 2;
 }
 .nav-items{
     list-style: none;
@@ -42,10 +59,6 @@ p{
     background-color: rgba(196, 196, 196, 0.2);
     border-radius: 6px;
     padding-left: 1rem;
-    /* background-image:url('search.svg');
-    background-repeat: no-repeat;
-    background-position: left center;
-    outline: 0; */
 }
 .title{
     font-size: 1.9rem;
@@ -162,7 +175,67 @@ p{
     border:none;
     padding:1.5rem 0;
 }
-
-@media only screen and (min-width: 768px) {   
-    
+.logo, .list, .acc, .desc{
+    display: none;
+}
+@media only screen and (min-width: 768px) { 
+    header{
+        max-width: 1200px;
+        margin: 0 auto;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+    } 
+    .logo{
+        -webkit-order: 1;
+        order: 1;
+    }
+    .search{
+        order:2;
+        -webkit-order: 2;
+        width:35%;
+        margin-top: 2.25rem;
+        border:solid 1px var(--gray);
+        background-color: var(--white);
+        border-radius: 6px;
+        padding: 1.75rem 1rem;
+    }
+    .nav-container{
+        -webkit-order: 3;
+        order: 3;
+    }
+    .nav-items{
+        display: inline;
+        margin: 0 1.5rem
+    }
+    .logo, .list, .acc, .desc{
+        display: block;
+    }
+    .logo-m, .menu{
+        display: none;
+    }
+    .image{
+        height: 28px;
+        width: 28px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    a{
+        text-decoration: none;
+    }
+    .desc{
+        text-transform: uppercase;
+        color: var(--black);
+        text-align: center;
+    }
 } /* end of media query */
+
+/* @media only screen and (min-width: 1024px) {
+
+}  */
+/* end of media query */
