@@ -46,6 +46,8 @@ header{
 }
 .nav-items{
     list-style: none;
+    display: inline;
+    margin: 0 1.5rem
 }
 .image{
     width:50px;
@@ -175,13 +177,18 @@ header{
     border:none;
     padding:1.5rem 0;
 }
-.logo, .list, .acc, .desc{
+.logo, .list, .acc, .desc, .carousel, .tabs{
     display: none;
 }
 @media only screen and (min-width: 768px) { 
+    .orange{
+        color: var(--orange);
+    }
     header{
         max-width: 1200px;
         margin: 0 auto;
+    } 
+    .header{
         display: -webkit-box;
         display: -moz-box;
         display: -ms-flexbox;
@@ -189,10 +196,11 @@ header{
         display:flex;
         flex-direction: row;
         justify-content: space-between;
-    } 
+    }
     .logo{
         -webkit-order: 1;
         order: 1;
+        margin-top: .25rem;
     }
     .search{
         order:2;
@@ -208,15 +216,16 @@ header{
         -webkit-order: 3;
         order: 3;
     }
-    .nav-items{
-        display: inline;
-        margin: 0 1.5rem
+    .tabs{
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
     }
-    .logo, .list, .acc, .desc{
-        display: block;
-    }
-    .logo-m, .menu{
-        display: none;
+
+    .nav-item{
+        list-style: none;
+        text-transform: uppercase;
+        font-size: .95rem;
     }
     .image{
         height: 28px;
@@ -225,6 +234,12 @@ header{
         margin-left: auto;
         margin-right: auto;
     }
+    .logo, .list, .acc, .desc, .carousel{
+        display: block;
+    }
+    .logo-m, .menu, .top{
+        display: none;
+    }
     a{
         text-decoration: none;
     }
@@ -232,6 +247,35 @@ header{
         text-transform: uppercase;
         color: var(--black);
         text-align: center;
+    }
+    .carousel{
+        width:100%;
+        min-height:80vh;
+        position: relative;
+        height:260px;
+        background-image: url("images/carousel.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .mb-2{
+        margin-bottom: 2rem;
+    }
+    .card{
+        position: absolute;
+        background-color: var(--white);
+        width:300px;
+        height:250px;
+        bottom: 100px;
+        left:100px;
+        padding:0 2rem;
+    }
+    .btn-small{
+        background-color: var(--black);
+        color:var(--white);
+        border-radius: 4px;
+        border:none;
+        padding:1rem 1.5rem;
+        font-size: .75rem;
     }
 } /* end of media query */
 
